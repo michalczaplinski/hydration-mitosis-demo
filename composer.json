@@ -1,0 +1,5 @@
+{
+    "require": {
+        "liquid/liquid": "^1.4"
+    }
+}

@@ -1,0 +1,23 @@
+{
+	"$schema": "https://json.schemastore.org/block.json",
+	"apiVersion": 2,
+	"name": "create-block/hydration-mitosis",
+	"version": "0.1.0",
+	"title": "Hydration Mitosis",
+	"category": "widgets",
+	"icon": "smiley",
+	"description": "Example of block hydration via a Mitosis compiler.",
+	"supports": {
+		"html": false
+	},
+	"attributes": {
+		"username": {
+			"type": "string",
+			"default": "Michal"
+		}
+	},
+	"textdomain": "hydration-mitosis",
+	"editorScript": "file:./build/index.js",
+	"editorStyle": "file:./build/index.css",
+	"style": "file:./build/style-index.css"
+}
