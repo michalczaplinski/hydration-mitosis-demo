@@ -1,5 +1,21 @@
 <div>
-  <input value="{{name}}" />
+  <h3>{{listName}}</h3>
 
-  Hello {{name}} !
+  <input value="{{newItem.name}}" />
+
+  <button class="button">Add todo</button>
+
+  <div class="div"></div>
 </div>
+<style>
+  .button {
+    margin-left: 10px;
+  }
+  .div {
+    padding: 10px;
+  }
+  .input {
+    margin-right: 10px;
+    vertical-align: text-bottom;
+  }
+</style>

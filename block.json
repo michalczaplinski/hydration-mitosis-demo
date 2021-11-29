@@ -11,9 +11,24 @@
 		"html": false
 	},
 	"attributes": {
-		"username": {
+		"listName": {
 			"type": "string",
-			"default": "Michal"
+			"default": "My TODO list"
+		},
+		"todos": {
+			"type": "array",
+			"default": [
+				{ "name": "hello", "done": false },
+				{ "name": "world", "done": false }
+			]
+		},
+		"maxTodos": {
+			"type": "number",
+			"default": 5
+		},
+		"showDone": {
+			"type": "boolean",
+			"default": true
 		}
 	},
 	"textdomain": "hydration-mitosis",

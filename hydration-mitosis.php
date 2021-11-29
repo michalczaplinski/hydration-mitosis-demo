@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name:       Hydration Mitosis
- * Description:       Example block written with ESNext standard and JSX support – build step required.
+ * Description:       Example of block hydration that using Mitosis compiler
  * Requires at least: 5.8
  * Requires PHP:      7.0
  * Version:           0.1.0
@@ -38,11 +38,14 @@ function add_attributes_to_block( $attributes = [], $content = '' ) {
 		if ( is_bool( $value ) ) {
 			$value = $value ? 'true' : 'false';
 		}
+
+		$json = '';
 		if ( ! is_scalar( $value ) ) {
 			$value = wp_json_encode( $value );
+			$json = '-json';
 		}
 
-		$escaped_data_attributes[] = 'data-' . esc_attr( strtolower( preg_replace( '/(?<!\ )[A-Z]/', '-$0', $key ) ) ) . '="' . esc_attr($value) . '"';
+		$escaped_data_attributes[] = 'data-' . esc_attr( strtolower( preg_replace( '/(?<!\ )[A-Z]/', '-$0', $key . $json ) ) ) . '="' . esc_attr($value) . '"';
 	}
 	
 	$return_val = '<div id="hydrate-block"' . implode( ' ', $escaped_data_attributes ) . '>' . trim( $output ) . '</div>' ;
