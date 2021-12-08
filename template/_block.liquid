@@ -5,7 +5,11 @@
 
   <button class="button">Add todo</button>
 
-  <div class="div"></div>
+  <div class="div">
+    {% for item in todos %}
+    <div></div>
+    {% endfor %}
+  </div>
 </div>
 <style>
   .button {

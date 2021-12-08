@@ -6,21 +6,21 @@ import { observer, useLocalObservable } from "mobx-react-lite";
 function TodoList(props) {
   const state = useLocalObservable(() => ({
     newItem: { name: "", done: false },
-    list: [],
+    todos: [],
     addItem() {
-      state.list = [...state.list, state.newItem];
+      state.todos = [...state.todos, state.newItem];
       state.newItem = {
         name: "",
         done: false,
       };
     },
     toggleDoneState(i) {
-      state.list[i].done = !state.list[i].done;
+      state.todos[i].done = !state.todos[i].done;
     },
   }));
 
   useEffect(() => {
-    state.list = props.todos;
+    state.todos = props.todos.slice(0, props.maxTodos);
   }, []);
 
   return (
@@ -46,7 +46,7 @@ function TodoList(props) {
           padding: "10px",
         }}
       >
-        {state.list.slice(0, props.maxTodos)?.map((item, i) => (
+        {state.todos?.map((item, i) => (
           <>
             {item.done && props.showDone ? (
               <>
@@ -86,7 +86,7 @@ function TodoList(props) {
           </>
         ))}
 
-        {state.list.length > props.maxTodos ? (
+        {state.todos.length > props.maxTodos ? (
           <>
             <div> There are more todos... </div>
           </>

@@ -3,18 +3,18 @@ import { useState, Show, For } from "@builder.io/mitosis";
 export default function TodoList(props) {
 	const state = useState({
 		newItem: { name: "", done: false },
-		list: [],
+		todos: [],
 		addItem() {
-			state.list = [...state.list, state.newItem];
+			state.todos = [...state.todos, state.newItem];
 			state.newItem = { name: "", done: false };
 		},
 		toggleDoneState(i) {
-			state.list[i].done = !state.list[i].done;
+			state.todos[i].done = !state.todos[i].done;
 		},
 	});
 
 	onMount(() => {
-		state.list = props.todos;
+		state.todos = props.todos.slice(0, props.maxTodos);
 	});
 
 	return (
@@ -28,7 +28,7 @@ export default function TodoList(props) {
 				Add todo
 			</button>
 			<div css={{ padding: "10px" }}>
-				<For each={state.list.slice(0, props.maxTodos)}>
+				<For each={state.todos}>
 					{(item, i) => (
 						<>
 							<Show when={item.done && props.showDone}>
@@ -56,7 +56,7 @@ export default function TodoList(props) {
 						</>
 					)}
 				</For>
-				<Show when={state.list.length > props.maxTodos}>
+				<Show when={state.todos.length > props.maxTodos}>
 					<div> There are more todos... </div>
 				</Show>
 			</div>

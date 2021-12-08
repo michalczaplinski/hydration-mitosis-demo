@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name:       Hydration Mitosis
- * Description:       Example of block hydration that using Mitosis compiler
+ * Description:       Example of block hydration using the Mitosis compiler
  * Requires at least: 5.8
  * Requires PHP:      7.0
  * Version:           0.1.0

@@ -8,3 +8,7 @@ sed -i -e 's/import { useLocalObservable/import { observer, useLocalObservable/g
 sed -i -e 's/?.map((item)/?.map((item, i)/g' src/block.js
 sed -i -e 's/export default //g' src/block.js
 echo "export default observer(TodoList);" >> src/block.js
+
+# Not sure why this file gets generated, possibly because we use --force to
+# overwrite the generated template. Regardless, we can just remove it.
+rm src/block.js-e

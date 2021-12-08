@@ -24,7 +24,7 @@ export default function Edit({ attributes, setAttributes }) {
 						checked={attributes.showDone}
 					/>
 					<TextControl
-						label={__("Username")}
+						label={__("List name")}
 						value={attributes.listName}
 						onChange={(name) => setAttributes({ listName: name })}
 					/>
