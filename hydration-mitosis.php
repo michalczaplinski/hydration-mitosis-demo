@@ -31,7 +31,7 @@ function enqueue_frontend_script() {
 function add_attributes_to_block( $attributes = [], $content = '' ) {
 	$escaped_data_attributes = [];
 
-	$template = new \Liquid\Template(__DIR__ . '/template');
+	$template = new \Liquid\Template(__DIR__ . '/src/_generated');
 	$output = $template->parseFile('block')->render($attributes);
 
 	foreach ( $attributes as $key => $value ) {

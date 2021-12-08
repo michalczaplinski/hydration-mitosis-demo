@@ -29,3 +29,5 @@ node_modules/
 vendor/
 composer.lock
 build
+
+_generated

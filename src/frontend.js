@@ -1,5 +1,5 @@
 import { Suspense } from "@wordpress/element";
-import Block from "./block";
+import Block from "./_generated/block";
 
 // hydrate is not exposed in @wordpress/element
 import { hydrate } from "react-dom";
