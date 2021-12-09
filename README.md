@@ -79,6 +79,10 @@ being discussed in https://github.com/WordPress/gutenberg/issues/36716.
   we pass a more complex expression to `<For each={} />` like e.g.
   `<For each={someObject.items.concat(otherItems)}>`.
 
+- For some reason, Mitosis wants to by default handle state with `mobx-react`
+  and CSS with Emotion. I see no inherent reason for that, but I'm sure it
+  could be configured to output more vanilla components.
+
 - _Mitosis syntax is meh_. The syntax is similar to React but it's not React and
   it kinda shows. It's definitely a bit more tedious to define your components
   this way and there are [some gotchas](https://github.com/BuilderIO/mitosis/blob/main/docs/overview.md#gotchas-and-limitations), too.
